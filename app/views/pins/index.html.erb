@@ -9,7 +9,7 @@
       <div class="panel-body">
 
         <p><%= pin.description %></p>
-        <p><strong><%= pin.user.email if pin.user %></strong></p>
+        <p><strong><%= pin.user.name if pin.user %></strong></p>
 
         <% if pin.user == current_user %>
           <div class="actions">
@@ -29,4 +29,8 @@
     </div>
     
   <% end %>
+</div>
+
+<div class = "center">
+  <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
 </div>
